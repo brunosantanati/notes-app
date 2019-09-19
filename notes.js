@@ -32,10 +32,9 @@ const removeNote = function(title){
         return note.title !== title
     })
 
-    saveNotes(notesToKeep)
-
     if(notes.length > notesToKeep.length){
         console.log(chalk.bgGreen.bold('Note named ' + title + ' was removed!'))
+        saveNotes(notesToKeep)
     }else{
         console.log(chalk.bgRed.bold('Note not found!'))
     }
